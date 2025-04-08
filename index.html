@@ -6,6 +6,49 @@
     <title>Collaborating Action by Action</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add these styles for the video background */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+            z-index: -1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .hero a {
+            color: #4db8ff;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,6 +66,15 @@
 
     <main>
         <section class="hero">
+            <!-- Video background -->
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="demos/compressed_nice_cooking_demo.mov" type="video/mp4">
+                <!-- Fallback for older browsers -->
+                Your browser does not support the video tag.
+            </video>
+            <!-- Overlay to improve text visibility -->
+            <div class="hero-overlay"></div>
+            
             <div class="container">
                 <h1 class="paper-title">Collaborating Action by Action: <br/> A Multi-agent LLM Framework for Embodied Reasoning</h1>
                 <p class="authors">
@@ -46,22 +98,12 @@
             </div>
         </section>
 
-        <!-- <section class="cta-buttons">
-            <div class="container">
-                <h2>Explore Our Results</h2>
-                <div class="buttons">
-                    <a href="leaderboard.html" class="btn primary-btn">View Leaderboard</a>
-                    <a href="demos.html" class="btn secondary-btn">See Task Demos</a>
-                </div>
-            </div>
-        </section> -->
-
         <section class="video-section">
             <div class="container">
                 <h2>Demo Video</h2>
                 <div class="video-container">
-                    <!-- Replace the src with your actual video link -->
-                    <iframe src="https://www.youtube.com/watch?v=iDJ6GrHNoDs&ab_channel=EmergentGarden" 
+                    <!-- Fixed YouTube embed URL format -->
+                    <iframe src="https://www.youtube.com/embed/iDJ6GrHNoDs" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen></iframe>
@@ -79,8 +121,6 @@
                 </p>
             </div>
         </section>
-
-        
     </main>
 
     <footer>
