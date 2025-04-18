@@ -123,7 +123,7 @@
                 <h2>Demo Video</h2>
                 <div class="video-container">
                     <!-- Fixed YouTube embed URL format -->
-                    <iframe src="https://www.youtube.com/embed/iDJ6GrHNoDs?autoplay=1" 
+                    <iframe src="https://www.youtube.com/embed/jFIWlEv6ZXo?autoplay=1" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen></iframe>
@@ -135,12 +135,11 @@
             <div class="container">
                 <h2>Abstract</h2>
                 <p>
-                    Collaboration pushes the boundaries of what is possible.
-                    The same is true for LLM agents that work in tandem with humans or other agents.
-                    Unfortunately, the most common LLM collaboration is via disembodied chat interfaces that are far distant from complex real world embodiment. 
-                    To better understand how LLM agents perform in an embodied multi-agent system, we introduce \mindcraft{} a platform that allows LLM agents to control Minecraft and MineCollab\footnote{our website here\url{}} - a benchmark we created to test the different dimensions of embodied and collaborative reasoning. 
-                    Though we hypothesize that collaboration can make embodied agents be more successful, we find that communication is a bottleneck for collaboration in our tasks, dropping by over 15\% across all models when the agents are forced to communicate hidden plan information. 
-                    This highlights the need for new methods beyond prompting and simple finetuning for embodied LLM reasoning and multi-agent collaboration through natural language communication.
+                    Collaboration is ubiquitous and essential in day-to-day life---from exchanging ideas, to delegating tasks, to generating plans together.
+                    This work studies how LLMs can adaptively collaborate to perform complex embodied reasoning tasks.
+                    To this end we introduce MINDCraft, a easily extensible platform built to enable LLM agents to control characters in the open-world game of Minecraft; and MineCollab, a benchmark to test the different dimensions of embodied and collaborative reasoning\footnote{our website here\url{}}.
+                    An experimental study finds that the primary bottleneck in collaborating effectively for current state-of-the-art agents is efficient natural language communication, with agent performance dropping as much as 15\% when they are required to communicate detailed task completion plans.
+                    We conclude that existing LLM agents are ill-optimized for multi-agent collaboration, especially in embodied scenarios, and highlight the need to employ methods beyond in-context and imitation learning.
                 </p>
             </div>
         </section>
