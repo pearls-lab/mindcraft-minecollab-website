@@ -32,21 +32,68 @@
         <section class="demos-section">
             <div class="container">
                 <h2>Task 1: Construction </h2>
-                <div class="video-container">
-                    <video width="100%" controls>
-                        <source src="demos/build_timelapse.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="container">
-                    <h2>Demo Video</h2>
-                    <div class="video-container">
-                        <!-- Fixed YouTube embed URL format -->
-                        <iframe src="https://www.youtube.com/embed/Cpy4kQ9-bsg" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
+                In the construction tasks, agents are directed to build structures from procedurally generated blueprints.
+                Blueprints can also be downloaded from the internet and read into our blueprint format - enabling agents to build anything from pyramids to the Eiffel Tower. 
+                We choose evaluate primarily on our generated blueprints as they provide fine-grained control over task complexity, allowing us to systematically vary the depth of collaboration required---e.g. number of rooms in the interior of palace, or the amount and types of materials required for each room.
+                At the beginning of each episode, agents are initialized with the blueprint, materials (e.g. stone, wood, doors, carpets) in such a way that no agent has the full resources or the expertise in terms of the types of tools that can be used to process the resources and complete the entire blueprint.
+                For example, if the blueprint required a stone base and a wooden roof, one agent would be given access and the ability to manipulate stone, the other to wood.
+                Agents are evaluated via an edit distance based metric that judges how close their constructed building is to the blueprint and the metric reported in \cref{tab: full_results} is the average of those edit distance scores.
+                    <div class="container">
+                        <h2>Timelapse Video</h2>
+                        <div class="video-container">
+                            <!-- Fixed YouTube embed URL format -->
+                            <iframe src="https://www.youtube.com/embed/vuBycbn35Rw" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
                     </div>
+
+                    <div class="container">
+                        <h2>Communication Showcase</h2>
+                        <p>In this video, we showcase the communication between agents during the construction task. The agents talk about what resources they have, and split up the work.</p>
+                        <div class="video-container">
+                            <!-- Fixed YouTube embed URL format -->
+                            <iframe src="https://www.youtube.com/embed/TtHg3AagACg" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <h2>Church Build </h2>
+                        <p>In this video we show the agents building a church. </p>
+                        <div class="video-container">
+                            <!-- Fixed YouTube embed URL format -->
+                            <iframe src="https://www.youtube.com/embed/Cpy4kQ9-bsg" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <h2>Failure Modes</h2>
+                        <p>However, we also see a number of failure modes in the multi agent construction tasks. </p>
+                        <p>Here is an example of the agents failing to build a church. One agent builds the foundation and then the other bots completely destroy it. </p>
+                        <div class="video-container">
+                            <!-- Fixed YouTube embed URL format -->
+                            <iframe src="https://www.youtube.com/embed/nSHetOFrVPI" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                        <p>Here is an example of the agents failing to build a church. One agent builds the foundation and then the other bots completely destroy it. </p>
+                        <div class="video-container">
+                            <!-- Fixed YouTube embed URL format -->
+                            <iframe src="https://www.youtube.com/embed/97Ot9ASEdkY" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </section>
