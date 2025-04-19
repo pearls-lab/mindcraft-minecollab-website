@@ -122,54 +122,6 @@
             <div class="container">
                 <h2>Demo Video</h2>
                 <div class="video-container">
-                    <!-- YouTube embed with loop functionality -->
-                    <div id="player"></div>
-                    <script>
-                        // Load the YouTube API script
-                        var tag = document.createElement('script');
-                        tag.src = "https://www.youtube.com/iframe_api";
-                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                        
-                        // Create YouTube player after API loads
-                        var player;
-                        function onYouTubeIframeAPIReady() {
-                            player = new YT.Player('player', {
-                                height: '100%',
-                                width: '100%',
-                                videoId: 'jFIWlEv6ZXo',
-                                playerVars: {
-                                    'autoplay': 1,
-                                    'playsinline': 1,
-                                    'mute': 1 // Autoplay requires muting the video
-                                },
-                                events: {
-                                    'onReady': onPlayerReady,
-                                    'onStateChange': onPlayerStateChange
-                                }
-                            });
-                        }
-                        
-                        function onPlayerReady(event) {
-                            event.target.playVideo();
-                        }
-                        
-                        function onPlayerStateChange(event) {
-                            // When video ends (state = 0), restart it
-                            if (event.data === 0) {
-                                player.seekTo(0);
-                                player.playVideo();
-                            }
-                        }
-                    </script>
-                </div>
-            </div>
-        </section>
-
-        <section class="video-section">
-            <div class="container">
-                <h2>Demo Video 1</h2>
-                <div class="video-container">
                     <div class="looping-video" data-video-id="jFIWlEv6ZXo"></div>
                 </div>
             </div>

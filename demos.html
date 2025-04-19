@@ -38,6 +38,20 @@
                 At the beginning of each episode, agents are initialized with the blueprint, materials (e.g. stone, wood, doors, carpets) in such a way that no agent has the full resources or the expertise in terms of the types of tools that can be used to process the resources and complete the entire blueprint.
                 For example, if the blueprint required a stone base and a wooden roof, one agent would be given access and the ability to manipulate stone, the other to wood.
                 Agents are evaluated via an edit distance based metric that judges how close their constructed building is to the blueprint and the metric reported in the leaderboard is the average of those edit distance scores.
+                <section class="video-section">
+                    <div class="container">
+                        <h2>Demo Video</h2>
+                        <div class="video-container">
+                            <div class="looping-video" data-video-id="jFIWlEv6ZXo"></div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container">
+                    <h2>Demo Video</h2>
+                    <div class="video-container">
+                        <div class="looping-video" data-video-id="jFIWlEv6ZXo"></div>
+                    </div>
+                </div>
                     <div class="container">
                         <h3>Timelapse Video</h3>
                         <div class="video-container">
@@ -186,4 +200,61 @@
         </div>
     </footer>
 </body>
+<script>
+    // Global YouTube API callback
+    function onYouTubeIframeAPIReady() {
+        // Process all video containers with class 'looping-video'
+        document.querySelectorAll('.looping-video').forEach(container => {
+            createLoopingPlayer(container);
+        });
+    }
+
+    // Function to create looping video players
+    function createLoopingPlayer(container) {
+        const videoId = container.getAttribute('data-video-id');
+        const playerId = 'player-' + videoId;
+        
+        // Create a div for the player
+        const playerDiv = document.createElement('div');
+        playerDiv.id = playerId;
+        container.appendChild(playerDiv);
+        
+        // Create the player
+        new YT.Player(playerId, {
+            height: '100%',
+            width: '100%',
+            videoId: videoId,
+            playerVars: {
+                'autoplay': 1,
+                'playsinline': 1,
+                'mute': 1, // Autoplay requires muting
+                'controls': 1
+            },
+            events: {
+                'onStateChange': function(event) {
+                    // When video ends (state = 0), restart it
+                    if (event.data === 0) {
+                        event.target.seekTo(0);
+                        event.target.playVideo();
+                    }
+                }
+            }
+        });
+    }
+
+    // Load YouTube API
+    function initYouTubeAPI() {
+        if (!document.getElementById('youtube-api')) {
+            const tag = document.createElement('script');
+            tag.id = 'youtube-api';
+            tag.src = 'https://www.youtube.com/iframe_api';
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+    }
+
+    // Initialize API when the page loads
+    document.addEventListener('DOMContentLoaded', initYouTubeAPI);
+</script>
+
 </html>
